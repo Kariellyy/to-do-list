@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     async function trocarCodigoPorAccessToken(codigo) {
         const clientID = '034ca46d4e4e4135bbbd7ba5b4df91f7';
         const clientSecret = '37de435e4c254a10a167e4f3b2d82efa';
-        const redirectURI = 'https://kariellyy.github.io/to-do-list/';
+        const redirectURI = 'https://ifpi-picos.github.io/js-dom-api-Kariellyy/';
 
         const urlTrocaToken = 'https://todoist.com/oauth/access_token';
 
