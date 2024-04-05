@@ -9,94 +9,67 @@ document.addEventListener('DOMContentLoaded', () => {
     let tarefas = JSON.parse(localStorage.getItem('tarefas')) || [];
     let indiceEdicao = null;
 
-    verificarAutenticacao();
-
     const salvarTarefas = () => {
         localStorage.setItem('tarefas', JSON.stringify(tarefas));
     };
 
-    const url = 'https://api.todoist.com/rest/v2/tasks';
-    let accessToken = null;
-    let isAuthenticated = false;
+    init();
 
-    function solicitarAutorizacaoOAuth() {
-        const clientID = '034ca46d4e4e4135bbbd7ba5b4df91f7';
-        const scope1 = 'task:add';
-        const scope2 = 'data:delete';
-        const scope3 = 'data:read';
-        const scope4 = 'data:read_write';
-        const scope = `${scope1},${scope2},${scope3},${scope4}`;
-        const state = '78678868685856';
+    async function init() {
 
-        const urlAutorizacao = `https://todoist.com/oauth/authorize?client_id=${clientID}&scope=${scope}&state=${state}`;
+        let userName = localStorage.getItem('userName');
+        if (userName === null || userName === '') {
+            userName = prompt('Digite seu usuário do GitHub:');
+            localStorage.setItem('userName', userName);
+        }
 
-        window.location.href = urlAutorizacao;
+        await fetchRepositories(userName);
     }
 
-    async function trocarCodigoPorAccessToken(codigo) {
-        const clientID = '034ca46d4e4e4135bbbd7ba5b4df91f7';
-        const clientSecret = '37de435e4c254a10a167e4f3b2d82efa';
-        const redirectURI = 'https://ifpi-picos.github.io/js-dom-api-Kariellyy/';
-
-        const urlTrocaToken = 'https://todoist.com/oauth/access_token';
-
-        const parametros = {
-            client_id: clientID,
-            client_secret: clientSecret,
-            code: codigo,
-            redirect_uri: redirectURI
-        };
-
+    async function fetchRepositories(userName) {
         try {
-            const resposta = await fetch(urlTrocaToken, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(parametros)
+            const response = await fetch(`https://api.github.com/users/${userName}/repos`);
+            const repos = await response.json();
+            const selectElement = document.getElementById('task-repo');
+            repos.forEach(repo => {
+                let option = document.createElement('option');
+                option.value = repo.html_url;
+                option.textContent = repo.name;
+                selectElement.appendChild(option);
             });
-
-            if (!resposta.ok) {
-                throw new Error('Erro ao trocar código por token de acesso');
-            }
-
-            const dados = await resposta.json();
-            accessToken = dados.access_token;
-            isAuthenticated = true;
-
-            localStorage.setItem('accessToken', accessToken);
-
-            console.log('Token de acesso obtido:', accessToken);
-        } catch (erro) {
-            console.error('Ocorreu um erro ao trocar código por token de acesso:', erro);
+        } catch (error) {
+            console.error('Erro ao buscar repositórios:', error);
         }
+    } document.addEventListener('DOMContentLoaded', init);
+
+    async function init() {
+
+        let userName = localStorage.getItem('userName');
+        if (userName === null || userName === '') {
+            userName = prompt('Digite seu usuário do GitHub:');
+            localStorage.setItem('userName', userName);
+        }
+
+        await fetchRepositories(userName);
+        restoreTasks();
+        document.querySelector('.btn-task').addEventListener('click', toggleModal);
+        document.querySelector('.btn-close').addEventListener('click', toggleModal);
+        document.querySelector('.form-task').addEventListener('submit', addTask);
     }
 
-    function verificarAutenticacao() {
-        const urlAtual = new URL(window.location.href);
-        const codigo = urlAtual.searchParams.get('code');
-
-        if (codigo) {
-            trocarCodigoPorAccessToken(codigo);
-        } else {
-            alert('Usuário não autenticado. Redirecionando para a página de autenticação para logar no Todoist.');
-            solicitarAutorizacaoOAuth();
-        }
-    }
-
-    async function fazerChamadaAPI(url, options) {
-        if (!isAuthenticated) {
-            console.error('Usuário não autenticado');
-            return;
-        }
-
-        options.headers.Authorization = `Bearer ${accessToken}`;
-
+    async function fetchRepositories(userName) {
         try {
-            const resposta = await fetch(url, options);
-            return resposta.json();
-        } catch (erro) {
-            console.error('Ocorreu um erro ao fazer chamada à API:', erro);
+            const response = await fetch(`https://api.github.com/users/${userName}/repos`);
+            const repos = await response.json();
+            const selectElement = document.getElementById('task-repo');
+            repos.forEach(repo => {
+                let option = document.createElement('option');
+                option.value = repo.html_url;
+                option.textContent = repo.name;
+                selectElement.appendChild(option);
+            });
+        } catch (error) {
+            console.error('Erro ao buscar repositórios:', error);
         }
     }
 
