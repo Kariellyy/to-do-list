@@ -76,7 +76,6 @@ h2 {
     justify-content: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #000;
-    /* deixar fixo no topo */
     position: sticky;
     
 }
@@ -86,12 +85,11 @@ h2 {
     justify-content: space-between;
     padding: 15px;
     background-color: #f4f4f4;
-    /* box-shadow: 0 0 7px 0 rgb(255, 158, 48); */
     border-radius: 7px;
-    margin: 30px ;
+    margin: 30px;
 }
 
-.concluir {
+.editar {
     padding: 10px;
     border: none;
     border-radius: 5px;
@@ -101,7 +99,7 @@ h2 {
     cursor: pointer;
 }
 
-.concluir:hover {
+.editar:hover {
     background-color: #fff;
     border: #ff8700 1px solid;
     color: #ff8700;
@@ -122,12 +120,4 @@ h2 {
     border: #ff8700 1px solid;
     color: #ff8700;
 }
-
-
-/* .add-tarefa{
-    border: 1px solid #ccc;
-    display: flex;
-    flex-direction: column;
-
-} */
 
