@@ -14,7 +14,7 @@ Com esta ferramenta, você pode sincronizar suas tarefas diárias com seus repos
 8. concluir uma tarefa.
 
 ## Como acessar
-Para acessar o site, basta acessar o link a seguir: [https://ifpi-picos.github.io/js-dom-api-Kariellyy/](https://ifpi-picos.github.io/js-dom-api-Kariellyy/).
+Para acessar o site, basta acessar o link a seguir: [https://kariellyy.github.io/to-do-list/](https://kariellyy.github.io/to-do-list/).
 
 ## Conclusão
 O site tem como objetivo organizar suas tarefas com a integração da APi do github. Com isso, já terá acesso ao seu repositório na tarefa criada.
