@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css\style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <title>To-Do List</title>
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <div class="add-tarefa">
+                <h3>Nova Tarefa</h3>
+                <input type="text" placeholder="Adicionar tarefa">
+                <h3>Descrição</h3>
+                <input type="text" placeholder="Adicionar descrição">
+                <h3>Etiqueta</h3>
+                <input type="text" placeholder="Adicionar etiqueta">
+                <h3>Data</h3>
+                <input type="date" placeholder="Adicionar data">
+                <button class="salvar">Adicionar Tarefa</button>
+            </div>
+
+            <div class="tarefas">
+                <h2>Lista de Tarefas</h2>
+                <div class="tarefa">
+                    <div class="tarefa-info">
+                        <h3>Nome da Tarefa</h4>
+                            <p>Descrição da tarefa</p>
+                            <ion-icon class="etiqueta" name="pricetag-outline"></ion-icon>
+                            <ion-icon class="data" name="calendar-outline"></ion-icon>
+                    </div>
+                    <div class="tarefa-actions">
+                        <button class="concluir"><ion-icon name="checkmark-outline"></ion-icon></button>
+                        <button class="excluir"><ion-icon name="trash-outline"></ion-icon></button>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+    </main>
+
+</body>
+
+</html>
