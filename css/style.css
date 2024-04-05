@@ -26,7 +26,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 5px;
+    gap: 0.5rem;
     margin: 30px 0 30px 30px;
 
 
@@ -65,18 +65,19 @@ input {
     padding: 40px;
     display: flex;
     flex-direction: column;
-    justify-content: column;
     gap: 5px;
-    margin: 30px ;
-    
+    margin: 30px;
+    overflow-y: auto;
+  
 }
 
 h2 {
     display: flex;
     justify-content: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #000;
-    position: sticky;
+    color: #ff8700;
+    margin-bottom: 30px;
+    /* position: sticky; */
     
 }
 
@@ -86,7 +87,6 @@ h2 {
     padding: 15px;
     background-color: #f4f4f4;
     border-radius: 7px;
-    margin: 30px;
 }
 
 .tarefa-info{
@@ -106,7 +106,7 @@ h2 {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: #ff8700;
+    background-color: green;
     margin-top: 15px;
     color: #fff;
     cursor: pointer;
@@ -114,11 +114,27 @@ h2 {
 
 .editar:hover {
     background-color: #fff;
-    border: #ff8700 1px solid;
-    color: #ff8700;
+    border: green 1px solid;
+    color: green;
 }
 
 .excluir {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: red;
+    margin-top: 15px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.excluir:hover {
+    background-color: #fff;
+    border: red 1px solid;
+    color: red;
+}
+
+.concluir {
     padding: 10px;
     border: none;
     border-radius: 5px;
@@ -128,9 +144,26 @@ h2 {
     cursor: pointer;
 }
 
-.excluir:hover {
+.concluir:hover {
     background-color: #fff;
     border: #ff8700 1px solid;
     color: #ff8700;
+}
+
+.tarefa.concluida {
+    opacity: 0.6;
+    background-color: #f0f0f0; /* Um fundo cinza claro para indicar conclusão */
+    text-decoration: line-through; /* Adiciona uma linha atravessando o texto */
+    
+}
+
+.tarefa.concluida .tarefa-info h3,
+.tarefa.concluida .tarefa-info p,
+.tarefa.concluida .etiqueta-data {
+    color: #686868; /* Uma cor de texto mais escura para melhor contraste no fundo claro */
+}
+
+.tarefa.concluida .tarefa-actions button {
+    filter: grayscale(100%); /* Deixa os ícones em escala de cinza */
 }
 
