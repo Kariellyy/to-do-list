@@ -1,0 +1,133 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+}
+
+.container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+}
+
+.add-tarefa {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    width: 400px;
+    height: 90vh;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    margin: 30px 0 30px 30px;
+
+
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+}
+
+.salvar {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff8700;
+    margin-top: 15px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.salvar:hover {
+    background-color: #fff;
+    border: #ff8700 1px solid;
+    color: #ff8700;
+}
+
+.tarefas{
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    width: 1000px;
+    height: 90vh;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: column;
+    gap: 5px;
+    margin: 30px ;
+    
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #000;
+    /* deixar fixo no topo */
+    position: sticky;
+    
+}
+
+.tarefa {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #f4f4f4;
+    /* box-shadow: 0 0 7px 0 rgb(255, 158, 48); */
+    border-radius: 7px;
+    margin: 30px ;
+}
+
+.concluir {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff8700;
+    margin-top: 15px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.concluir:hover {
+    background-color: #fff;
+    border: #ff8700 1px solid;
+    color: #ff8700;
+}
+
+.excluir {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff8700;
+    margin-top: 15px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.excluir:hover {
+    background-color: #fff;
+    border: #ff8700 1px solid;
+    color: #ff8700;
+}
+
+
+/* .add-tarefa{
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+
+} */
+
