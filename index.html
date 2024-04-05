@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css\style.css">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="javaScript/script.js" assyn></script>
     <title>To-Do List</title>
 </head>
 
@@ -15,13 +16,13 @@
         <div class="container">
             <div class="add-tarefa">
                 <h3>Nova Tarefa</h3>
-                <input type="text" placeholder="Adicionar tarefa">
+                <input type="text" id="nome-tarefa" placeholder="Adicionar tarefa">
                 <h3>Descrição</h3>
-                <input type="text" placeholder="Adicionar descrição">
+                <input type="text" id="descricao" placeholder="Adicionar descrição">
                 <h3>Etiqueta</h3>
-                <input type="text" placeholder="Adicionar etiqueta">
+                <input type="text" id="etiqueta" placeholder="Adicionar etiqueta">
                 <h3>Data</h3>
-                <input type="date" placeholder="Adicionar data">
+                <input type="date" id="data" placeholder="Adicionar data">
                 <button class="salvar">Adicionar Tarefa</button>
             </div>
 
@@ -35,15 +36,12 @@
                             <ion-icon class="data" name="calendar-outline"></ion-icon>
                     </div>
                     <div class="tarefa-actions">
-                        <button class="concluir"><ion-icon name="checkmark-outline"></ion-icon></button>
+                        <button class="editar"><ion-icon name="create-outline"></ion-icon></button>
                         <button class="excluir"><ion-icon name="trash-outline"></ion-icon></button>
                     </div>
 
                 </div>
             </div>
-
-
-
     </main>
 
 </body>
