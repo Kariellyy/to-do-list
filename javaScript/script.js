@@ -22,8 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="tarefa-info">
                     <h3>${tarefa.nome}</h3>
                     <p>${tarefa.descricao}</p>
-                    <ion-icon class="etiqueta" name="pricetag-outline"></ion-icon> ${tarefa.etiqueta}
-                    <ion-icon class="data" name="calendar-outline"></ion-icon> ${tarefa.data}
+                    <div class="etiqueta-data">
+                        <ion-icon class="etiqueta" name="pricetag-outline"></ion-icon> ${tarefa.etiqueta}
+                        <ion-icon class="data" name="calendar-outline"></ion-icon> ${tarefa.data}
+                    </div>
                 </div>
                 <div class="tarefa-actions">
                     <button class="editar" data-index="${index}"><ion-icon name="create-outline"></ion-icon></button>

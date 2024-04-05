@@ -89,6 +89,19 @@ h2 {
     margin: 30px;
 }
 
+.tarefa-info{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+
+}
+.etiqueta-data{
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+}
+
+
 .editar {
     padding: 10px;
     border: none;
